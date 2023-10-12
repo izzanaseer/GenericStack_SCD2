@@ -1,5 +1,3 @@
-import java.util.EmptyStackException;
-
 public class genericStack <T>{
     node<T> top;
     genericStack(){
@@ -12,7 +10,10 @@ public class genericStack <T>{
         top = nn;
     }
 
-    public T pop() {
+    public T pop() throws MyEmptyStackException {
+        if (isEmpty()) {
+            throw new MyEmptyStackException("Stack is empty, cannot pop");
+        }
         T item = top.getData();
         top = top.getNext();
         return item;
