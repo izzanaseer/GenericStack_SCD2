@@ -1,6 +1,7 @@
+import java.util.EmptyStackException;
+
 public class genericStack <T>{
     node<T> top;
-
     genericStack(){
         this.top = null;
     }
@@ -16,7 +17,6 @@ public class genericStack <T>{
         top = top.getNext();
         return item;
     }
-
     public boolean isEmpty() {
         return top == null;
     }
